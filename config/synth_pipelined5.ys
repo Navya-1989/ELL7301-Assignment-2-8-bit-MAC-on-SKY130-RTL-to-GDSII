@@ -1,0 +1,12 @@
+read_liberty -lib config/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog rtl/mac8_pipelined5.v
+
+synth -top mac8_pipelined5
+
+dfflibmap -liberty config/sky130_fd_sc_hd__tt_025C_1v80.lib
+abc -liberty config/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+clean
+write_verilog reports/mac8_synth_pipelined5.v
+
+stat -liberty config/sky130_fd_sc_hd__tt_025C_1v80.lib

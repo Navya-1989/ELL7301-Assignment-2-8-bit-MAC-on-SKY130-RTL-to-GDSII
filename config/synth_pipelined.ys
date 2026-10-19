@@ -1,0 +1,26 @@
+# Read design
+read_verilog rtl/mac8_pipelined.v
+
+# Elaborate
+hierarchy -check -top mac8_pipelined
+
+# High-effort generic synthesis
+proc
+opt
+fsm
+opt
+memory
+opt
+
+# Techmap standard arithmetic with fast adders
+techmap -map +/techmap.v
+opt
+
+# Technology mapping to SKY130 library
+dfflibmap -liberty config/sky130_fd_sc_hd__tt_025C_1v80.lib
+abc -liberty config/sky130_fd_sc_hd__tt_025C_1v80.lib -script +strash;scorr;ifraig;retime,{D};strash;dch,-f;map,-p,-K,7;topo;dnsize
+
+# Clean up
+clean
+write_verilog -noattr reports/mac8_synth_pipelined.v
+stat -liberty config/sky130_fd_sc_hd__tt_025C_1v80.lib

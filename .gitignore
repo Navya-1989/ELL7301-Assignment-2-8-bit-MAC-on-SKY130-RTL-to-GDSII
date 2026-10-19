@@ -1,0 +1,14 @@
+# Simulation outputs
+*.out
+*.vcd
+sim.outputs/
+
+# Large PDK file, re-downloadable (see README)
+config/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+# Editor and OS junk
+*.swp
+*~
+.DS_Store
+Thumbs.db
+desktop.ini

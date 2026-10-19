@@ -1,0 +1,3 @@
+TEST SUMMARY: 1024 checks, 1024 PASS, 0 FAIL
+RESULT: ALL TESTS PASSED
+tb/mac8_tb.v:104: $finish called at 10246000 (1ps)
