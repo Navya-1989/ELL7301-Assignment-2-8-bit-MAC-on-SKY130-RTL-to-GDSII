@@ -53,7 +53,7 @@ reports/        Synthesis, timing, area and signoff reports
 layout/         mac8.gds (final GDSII) and rendered layout images
 verification/   drc.rpt and lvs.rpt
 results/        Screenshots used as evidence in the report
-docs/           Report and learning guide
+report.pdf      Final report
 ```
 
 ## Tools
